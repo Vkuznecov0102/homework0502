@@ -7,40 +7,41 @@ import java.util.Scanner;
 
 public class CoffeeServiceImpl implements CoffeeService {
 
-    private Coffee serviceCoffee;
-    private final BufferedReaderServiceImpl bufferedReaderService;
+    private Coffee coffee;
+    private final BufferedReaderService bufferedReaderService;
+    private final ScannerService scannerService;
 
     public CoffeeServiceImpl() {
         bufferedReaderService = new BufferedReaderServiceImpl();
+        scannerService = new ScannerServiceImpl();
     }
+
+
 
     @SneakyThrows
     @Override
     public Coffee getCoffeeByPrice(double price) {
         bufferedReaderService.menuReader("src/main/resources/menu.txt");
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println();
-        System.out.println("Введите цену");
+        Scanner scanner = scannerService.wakeUpScanner();
         price = scanner.nextDouble();
 
         while (true) {
             if (price == 60) {
-                serviceCoffee = new Coffee("Эспрессо");
-                System.out.println("Ваш выбор " + serviceCoffee + "!" + "Получите пожалуйста:-)");
-                return serviceCoffee;
+                coffee = new Coffee("Эспрессо");
+                System.out.println("Ваш выбор " + coffee + "!" + "Получите пожалуйста:-)");
+                return coffee;
             } else if (price == 80) {
-                serviceCoffee = new Coffee("Американо");
-                System.out.println("Ваш выбор " + serviceCoffee + "!" + "Получите пожалуйста:-)");
-                return serviceCoffee;
+                coffee = new Coffee("Американо");
+                System.out.println("Ваш выбор " + coffee + "!" + "Получите пожалуйста:-)");
+                return coffee;
             } else if (price == 100) {
-                serviceCoffee = new Coffee("Капучино");
-                System.out.println("Ваш выбор " + serviceCoffee + "!" + "Получите пожалуйста:-)");
-                return serviceCoffee;
+                coffee = new Coffee("Капучино");
+                System.out.println("Ваш выбор " + coffee + "!" + "Получите пожалуйста:-)");
+                return coffee;
             } else if (price == 110) {
-                serviceCoffee = new Coffee("Латте");
-                System.out.println("Ваш выбор " + serviceCoffee + "!" + "Получите пожалуйста:-)");
-                return serviceCoffee;
+                coffee = new Coffee("Латте");
+                System.out.println("Ваш выбор " + coffee + "!" + "Получите пожалуйста:-)");
+                return coffee;
             }
             else if (price != 60 && price != 80 && price != 100 && price != 110) {
                 System.out.println("Другого кофе нет. Попробуйте еще!");
