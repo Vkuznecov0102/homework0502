@@ -1,6 +1,7 @@
 package ru.itsjava.service;
 
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Qualifier;
 import ru.itsjava.domain.Coffee;
 
 import java.util.Scanner;

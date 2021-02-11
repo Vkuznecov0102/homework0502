@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class ScannerServiceImpl implements ScannerService{
 
     @Override
-    public Scanner wakeUpScanner() {
+    public void read(double price) {
+        Scanner scanner=new Scanner(System.in);
         System.out.println();
         System.out.println("Введите цену");
-        return new Scanner(System.in);
     }
 }

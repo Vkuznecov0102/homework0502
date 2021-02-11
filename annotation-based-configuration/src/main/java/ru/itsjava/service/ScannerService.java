@@ -3,5 +3,5 @@ package ru.itsjava.service;
 import java.util.Scanner;
 
 public interface ScannerService {
-    Scanner wakeUpScanner();
+    void read(double price);
 }

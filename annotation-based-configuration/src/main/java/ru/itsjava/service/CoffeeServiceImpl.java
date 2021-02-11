@@ -24,8 +24,7 @@ public class CoffeeServiceImpl implements CoffeeService {
     @Override
     public Coffee getCoffeeByPrice(double price) {
         bufferedReaderService.menuReader("src/main/resources/menu.txt");
-        Scanner scanner = scannerService.wakeUpScanner();
-        price = scanner.nextDouble();
+        scannerService.read(price);
 
         while (true) {
             if (price == 60) {

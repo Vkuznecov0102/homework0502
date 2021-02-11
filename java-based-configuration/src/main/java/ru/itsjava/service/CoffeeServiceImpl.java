@@ -3,7 +3,6 @@ package ru.itsjava.service;
 import lombok.SneakyThrows;
 import ru.itsjava.domain.Coffee;
 
-import java.util.Scanner;
 
 public class CoffeeServiceImpl implements CoffeeService {
 
@@ -22,8 +21,7 @@ public class CoffeeServiceImpl implements CoffeeService {
     @Override
     public Coffee getCoffeeByPrice(double price) {
         bufferedReaderService.menuReader("src/main/resources/menu.txt");
-        Scanner scanner = scannerService.wakeUpScanner();
-        price = scanner.nextDouble();
+        scannerService.read(price);
 
         while (true) {
             if (price == 60) {
