@@ -2,10 +2,7 @@ package ru.itsjava.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.itsjava.service.BufferedReaderService;
-import ru.itsjava.service.BufferedReaderServiceImpl;
-import ru.itsjava.service.CoffeeService;
-import ru.itsjava.service.CoffeeServiceImpl;
+import ru.itsjava.service.*;
 
 @Configuration
 public class MyConfig {
@@ -18,5 +15,10 @@ public class MyConfig {
     @Bean
     public BufferedReaderService bufferedReaderService() {
         return new BufferedReaderServiceImpl();
+    }
+
+    @Bean
+    public ScannerService scannerService(){
+        return new ScannerServiceImpl();
     }
 }

@@ -1,14 +1,24 @@
 package ru.itsjava.service;
 
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
 import ru.itsjava.domain.Coffee;
 
 
+@RequiredArgsConstructor
 public class CoffeeServiceImpl implements CoffeeService {
 
+
     private Coffee coffee;
+
+    @Autowired
     private final BufferedReaderService bufferedReaderService;
+
+    @Autowired
     private final ScannerService scannerService;
+
+
 
     public CoffeeServiceImpl() {
         bufferedReaderService = new BufferedReaderServiceImpl();
