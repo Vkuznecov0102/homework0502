@@ -1,14 +1,16 @@
 package ru.itsjava;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
 import ru.itsjava.service.CoffeeService;
 
-@ComponentScan({"ru.itsjava"})
+@SpringBootApplication
 public class Application {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(Application.class);
-        context.getBean(CoffeeService.class).getCoffeeByPrice(100);
+        SpringApplicationBuilder builder = new SpringApplicationBuilder(Application.class);
+        builder.headless(false);
+        ConfigurableApplicationContext context = builder.run(args);
+        context.getBean(CoffeeService.class).getCoffeeByPrice(80);
     }
 }

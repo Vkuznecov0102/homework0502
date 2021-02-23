@@ -22,7 +22,7 @@ public class CoffeeServiceImpl implements CoffeeService {
     @SneakyThrows
     @Override
     public Coffee getCoffeeByPrice(double price) {
-        bufferedReaderService.menuReader("src/main/resources/menu.txt");
+        bufferedReaderService.menuReader("src/main/resources/coffee.txt");
         Scanner scanner = scannerService.wakeUpScanner();
         price = scanner.nextDouble();
 

@@ -1,12 +1,9 @@
 package ru.itsjava.service;
 
-import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.itsjava.domain.Coffee;
 
-
-public class CoffeeServiceImpl implements CoffeeService {
-
+public class CoffeeHouseServiceImpl implements CoffeeService{
 
     private Coffee coffee;
 
@@ -16,31 +13,29 @@ public class CoffeeServiceImpl implements CoffeeService {
     @Autowired
     private ScannerService scannerService;
 
-    @SneakyThrows
     @Override
     public Coffee getCoffeeByPrice(double price) {
-        bufferedReaderService.menuReader("src/main/resources/coffee.txt");
+        bufferedReaderService.menuReader("src/main/resources/coffeehouse.txt");
         scannerService.read(price);
 
         while (true) {
-            if (price == 60) {
-                coffee = new Coffee("Эспрессо");
+            if (price == 75) {
+                coffee = new Coffee("Мокка");
                 System.out.println("Ваш выбор " + coffee + "!" + "Получите пожалуйста:-)");
                 return coffee;
-            } else if (price == 80) {
-                coffee = new Coffee("Американо");
+            } else if (price == 120) {
+                coffee = new Coffee("Холодный кофе");
                 System.out.println("Ваш выбор " + coffee + "!" + "Получите пожалуйста:-)");
                 return coffee;
-            } else if (price == 100) {
-                coffee = new Coffee("Капучино");
+            } else if (price == 130) {
+                coffee = new Coffee("Горячий шоколад");
                 System.out.println("Ваш выбор " + coffee + "!" + "Получите пожалуйста:-)");
                 return coffee;
-            } else if (price == 110) {
-                coffee = new Coffee("Латте");
+            } else if (price == 90) {
+                coffee = new Coffee("Какао");
                 System.out.println("Ваш выбор " + coffee + "!" + "Получите пожалуйста:-)");
                 return coffee;
-            }
-            else {
+            } else {
                 System.out.println("Другого кофе нет. Попробуйте еще!");
             }
         }
