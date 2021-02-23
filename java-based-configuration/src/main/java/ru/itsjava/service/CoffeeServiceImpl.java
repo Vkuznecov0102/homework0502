@@ -39,8 +39,7 @@ public class CoffeeServiceImpl implements CoffeeService {
                 coffee = new Coffee("Латте");
                 System.out.println("Ваш выбор " + coffee + "!" + "Получите пожалуйста:-)");
                 return coffee;
-            }
-            else {
+            } else {
                 System.out.println("Другого кофе нет. Попробуйте еще!");
             }
         }

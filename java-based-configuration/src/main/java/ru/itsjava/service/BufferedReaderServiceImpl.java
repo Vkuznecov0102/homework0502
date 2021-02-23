@@ -5,7 +5,7 @@ import lombok.SneakyThrows;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class BufferedReaderServiceImpl implements BufferedReaderService{
+public class BufferedReaderServiceImpl implements BufferedReaderService {
 
     @Override
     @SneakyThrows

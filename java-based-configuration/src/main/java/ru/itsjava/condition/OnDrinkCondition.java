@@ -11,6 +11,6 @@ public class OnDrinkCondition implements Condition {
 
     @Override
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
-        return JOptionPane.showConfirmDialog(null,"Do you want coffee?") ==0;
+        return JOptionPane.showConfirmDialog(null, "Do you want non-standard menu?") == 0;
     }
 }

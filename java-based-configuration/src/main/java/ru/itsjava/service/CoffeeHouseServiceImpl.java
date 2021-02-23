@@ -3,7 +3,7 @@ package ru.itsjava.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.itsjava.domain.Coffee;
 
-public class CoffeeHouseServiceImpl implements CoffeeService{
+public class CoffeeHouseServiceImpl implements CoffeeService {
 
     private Coffee coffee;
 
