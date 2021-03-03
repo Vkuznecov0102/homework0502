@@ -8,8 +8,6 @@ import ru.itsjava.domain.Coffee;
 public class CoffeeServiceImpl implements CoffeeService {
 
 
-    private Coffee coffee;
-
     @Autowired
     private BufferedReaderService bufferedReaderService;
 
@@ -21,6 +19,7 @@ public class CoffeeServiceImpl implements CoffeeService {
     public Coffee getCoffeeByPrice(double price) {
         bufferedReaderService.menuReader("src/main/resources/coffee.txt");
         scannerService.read(price);
+        Coffee coffee;
 
         while (true) {
             if (price == 60) {
